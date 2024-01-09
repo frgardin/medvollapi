@@ -1,4 +1,4 @@
-package med.voll.api.paciente;
+package med.voll.api.endereco;
 
 public record DadosEndereco(
         String logradouro,
