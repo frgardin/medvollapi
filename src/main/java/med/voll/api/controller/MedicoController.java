@@ -1,6 +1,8 @@
 package med.voll.api.controller;
 
 import med.voll.api.medico.DadosListagemMedico;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.transaction.Transactional;
@@ -27,12 +29,10 @@ public class MedicoController {
     }
 
     @GetMapping
-    public List<DadosListagemMedico> listar(){
+    public Page<DadosListagemMedico> listar(Pageable paginacao){
         return repository
-                .findAll()
-                .stream()
-                .map(DadosListagemMedico::new)
-                .toList();
+                .findAll(paginacao)
+                .map(DadosListagemMedico::new);
     }
 
 }
