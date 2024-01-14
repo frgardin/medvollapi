@@ -1,6 +1,8 @@
 package med.voll.api.controller;
 
-import med.voll.api.medico.*;
+import med.voll.api.domain.medico.Medico;
+import med.voll.api.domain.medico.MedicoRepository;
+import med.voll.api.domain.medico.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
