@@ -20,8 +20,9 @@ public class AutenticacaoController {
     private AuthenticationManager manager;
 
     @PostMapping
-    public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados){
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+    public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
+        UsernamePasswordAuthenticationToken token
+                = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         Authentication authentication = manager.authenticate(token);
 
         return ResponseEntity.ok().build();
