@@ -2,13 +2,14 @@ version: '3.9'
 services:
   db:
     image: mysql:8.0.17
-#    restart: always
+    restart: always
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: vollmed_api
-#    volumes:
-#      - db:/var/lib/mysql
-#volumes:
-#  db:
+      ALLOW_PUBLIC_RETRIEVAL: true
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
