@@ -22,6 +22,7 @@ public class Doctor {
     private String name;
     private String email;
     private String crm;
+    private String telephone;
 
     @Enumerated(EnumType.STRING)
     private ExpertiseEnum expertise;
