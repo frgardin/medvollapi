@@ -28,4 +28,9 @@ public class Address {
         this.city = addressDto.city();
         this.uf = addressDto.uf();
     }
+
+    public void updateInfo(AddressDto addressDto) {
+        if (addressDto.street())
+            this.street
+    }
 }

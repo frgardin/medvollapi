@@ -6,6 +6,7 @@ import med.voll.api.domain.Doctor;
 import med.voll.api.domain.DoctorRepository;
 import med.voll.api.dtos.DoctorDto;
 import med.voll.api.dtos.DoctorListResponse;
+import med.voll.api.dtos.DoctorUpdateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,9 +24,18 @@ public class DoctorController {
         return repository.findAll(pageable).map(DoctorListResponse::new);
     }
 
+    @PutMapping("/{id}")
+    @Transactional
+    public void updateDoctor(@RequestBody @Valid
+                             DoctorUpdateDto doctorUpdateDto) {
+        Doctor doctor = repository.getReferenceById(doctorUpdateDto.id());
+        doctor.updateInfo(doctorUpdateDto);
+
+    }
+
     @PostMapping
     @Transactional
-    public void postDoctor(@RequestBody @Valid DoctorDto doctorDto) {
+    public void createDoctor(@RequestBody @Valid DoctorDto doctorDto) {
         repository.save(new Doctor(doctorDto));
     }
 }
