@@ -30,7 +30,6 @@ public class DoctorController {
                              DoctorUpdateDto doctorUpdateDto) {
         Doctor doctor = repository.getReferenceById(doctorUpdateDto.id());
         doctor.updateInfo(doctorUpdateDto);
-
     }
 
     @PostMapping
@@ -38,4 +37,11 @@ public class DoctorController {
     public void createDoctor(@RequestBody @Valid DoctorDto doctorDto) {
         repository.save(new Doctor(doctorDto));
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deleteDoctor(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
+
 }
