@@ -30,7 +30,19 @@ public class Address {
     }
 
     public void updateInfo(AddressDto addressDto) {
-        if (addressDto.street())
-            this.street
+        if (addressDto.street() != null)
+            this.street = addressDto.street();
+        if (addressDto.district() != null)
+            this.district = addressDto.district();
+        if (addressDto.cep() != null)
+            this.cep = addressDto.cep();
+        if (addressDto.number() != null)
+            this.number = addressDto.number();
+        if (addressDto.complement() != null)
+            this.complement = addressDto.complement();
+        if (addressDto.city() != null)
+            this.city = addressDto.city();
+        if (addressDto.uf() != null)
+            this.uf = addressDto.uf();
     }
 }

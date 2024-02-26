@@ -24,7 +24,7 @@ public class DoctorController {
         return repository.findAll(pageable).map(DoctorListResponse::new);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping
     @Transactional
     public void updateDoctor(@RequestBody @Valid
                              DoctorUpdateDto doctorUpdateDto) {
