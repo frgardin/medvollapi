@@ -12,13 +12,7 @@ public record DoctorUpdateDto(
         @NotNull
         Long id,
         String name,
-        @Email
-        String email,
-        @Pattern(regexp = "\\d{4,6}")
-        String crm,
         String telephone,
-        @JsonProperty("expertise")
-        ExpertiseEnum expertiseEnum,
         @JsonProperty("address")
         @Valid
         AddressDto addressDto

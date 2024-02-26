@@ -42,14 +42,8 @@ public class Doctor {
     public void updateInfo(DoctorUpdateDto doctorUpdateDto) {
         if (doctorUpdateDto.name() != null)
             this.name = doctorUpdateDto.name();
-        if (doctorUpdateDto.email() != null)
-            this.email = doctorUpdateDto.email();
-        if (doctorUpdateDto.crm() != null)
-            this.crm = doctorUpdateDto.crm();
         if (doctorUpdateDto.telephone() != null)
             this.telephone = doctorUpdateDto.telephone();
-        if (doctorUpdateDto.expertiseEnum() != null)
-            this.expertise = doctorUpdateDto.expertiseEnum();
         if (doctorUpdateDto.addressDto() != null)
             this.address.updateInfo(doctorUpdateDto.addressDto());
 
